@@ -1,48 +1,12 @@
-"""
-Dadas las siguientes clases con el output de sus
-respectivos métodos, crea una interfaz formal
-que las implemente.
+# Repite el ejercicio anterior esta vez creando una
+# interfaz informal.
 
-svm = SVM()
-svm.preprocess_data(data=None, y=None)
-svm.fit()
-svm.predict()
-dt = DecisionTree()
-dt.preprocess_data(data=None, y=None)
-dt.fit(O)
-dt.predict()
 
-output:
-Preprocessing data at SVM
-Training at SVM
-Evaluating at SVM
-Preprocessing data at DecisionTree
-Training at DecisionTree
-Evaluating at DecisionTree
-
-Preprocessing data at SVM
-Training at SVM
-Evaluating at SVM
-Preprocessing data at DecisionTree
-Training at DecisionTree
-Evaluating at DecisionTree
-
-"""
-
-from abc import abstractmethod
-from abc import ABCMeta
-
-class Interfaz(metaclass=ABCMeta):
-
-    @abstractmethod
-    def preprocess_data(self, data, y):
+class Interfaz:
+    def preprocess_data(self):
         pass
-
-    @abstractmethod
     def fit(self):
         pass
-
-    @abstractmethod
     def predict(self):
         pass
 
