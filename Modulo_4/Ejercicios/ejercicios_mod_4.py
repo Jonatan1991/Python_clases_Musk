@@ -666,12 +666,15 @@ for fecha in fechas_2():
 # acabar de leer todos los elementos de un
 # generador.
 
-
+# funcion generadora que devuelve la multiplicacion entre los elementos de cada lista
 def prod(l1, l2):
+    #iteradores para cada lista, el iter nos permite recorrer cada lista elemento por elemento y asi poder utilizar el next
     it1 = iter(l1)
     it2 = iter(l2)
 
+# Creamos un bloque try para capturar la excepcion 
     try:
+        # buclme que se detendra al lanzar la excepcion de StopIteration cuando se acaben los elementos de las listas
         while True:
            solution =  yield next(it1) * next(it2)
     except StopIteration:
@@ -697,7 +700,10 @@ for i in resultado:
 
 import random
 
+#funcion generadora
 def numeros_random(n):
+    #  iteramos n veces para generar n numeros aleatorios
+    # el _ es indica que no se va a usar la variable de iteración, es una conversion
     for _ in range(n):
        
         # yield random.random() # asi me devuelve numeros decimales random
@@ -720,10 +726,16 @@ for num in numeros:
 # definición y el resto se calculan sumando los dos
 # últimos valores de la sucesión.
 
+#funcion generadora de Fibonacci
+#fibonacci es una sucesion infinita
 def numeros_fibonacci(nums):
+    #inicializamos los dos primeros valores de la sucesion
     x, y = 0, 1
+    # iteramos nums veces para generar los numeros de la sucesion
     for _ in range(nums):
+        # el yiel es como un return pero para generadores, devuelve el valor de x
         yield x
+        # actualizamos los valores de x e y, el nuevo valor de x es el valor de y y el nuevo valor de y es la suma de x e y
         x, y = y, x+y
 
 for num in numeros_fibonacci(10):
@@ -769,6 +781,8 @@ for i in generador_2(5):
 
 import random
 
+# funcion generadora que devuelve n numeros senares, 
+# si el numero generado es par se le resta 1 para convertirlo en impar
 def numeros_senares(n):
     for _ in range(n):
         numero = random.randint(1, 99)
@@ -793,6 +807,7 @@ def suma(x, y):
     try:
         result = x + y
         return result
+    # Capturamos cualquier tipo de excepción que se pueda generar
     except Exception as error:
         print("Type: ", type(error))
         print("Argumentos: ", error.args)
@@ -812,7 +827,7 @@ print(suma(1, "Hola"))
 # NegativeDifferenceException.
 
 
-
+# Excepción personalizada NegativeDifferenceException
 class NegativeDifferenceException(Exception):
     pass
 
@@ -820,6 +835,7 @@ class NegativeDifferenceException(Exception):
 def diferencia(a, b):
     resultado = a - b
     if resultado < 0:
+        # Si la diferencia es negativa, lanzamos la excepción personalizada con un mensaje de error
         raise NegativeDifferenceException(f"La diferencia es negativa: {resultado}")
     return resultado
 
@@ -844,8 +860,10 @@ def division(x, y):
     try: 
         result = x / y
         return result
+    # Capturamos la excepción de tipo TypeError que se puede generar si los parámetros no son números enteros
     except TypeError:
         print("Los parámetros deben ser números enteros")
+        # Capturamos la excepción de tipo ZeroDivisionError que se puede generar si el divisor es 0
     except ZeroDivisionError:
         print("El divisor no puede ser 0")
     
@@ -872,6 +890,7 @@ def division(x, y):
         print("Los parámetros deben ser números enteros")
     except ZeroDivisionError:
         print("El divisor no puede ser 0")
+    # El bloque finally se ejecuta siempre, independientemente de si se ha generado una excepción o no
     finally:
         print("Este es el último ejercicio para finalizar el modulo 4")
 
