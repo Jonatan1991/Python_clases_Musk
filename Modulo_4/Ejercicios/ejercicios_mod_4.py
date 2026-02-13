@@ -897,17 +897,3 @@ def division(x, y):
 print(division(4, "hola"))
 print(division(4, 0))
 print(division(4, 2))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
