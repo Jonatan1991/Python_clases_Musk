@@ -1,6 +1,5 @@
 import sys
 
-
 try:
     f = open('numeros.txt')
     s = f.readline()
