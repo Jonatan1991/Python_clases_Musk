@@ -1,0 +1,5 @@
+El sol brilla intensamente sobre el campo.
+Este es el, archivo de notas para el ejercicio.
+Programar en Python es el mejor camino.
+elefante
+elemento
