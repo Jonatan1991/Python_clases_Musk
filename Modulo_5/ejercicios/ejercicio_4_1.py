@@ -12,7 +12,6 @@ class BuscarPalabras:
         self.ruta = ruta_archivo
 
     def _leer_archivo(self):
-        """Lee y devuelve el contenido completo del archivo."""
         with open(self.ruta, "r", encoding="utf-8") as file:
             return file.read()
 
@@ -42,10 +41,10 @@ class BuscarPalabras:
         print(f"Cantidad encontrada (regex): {len(resultados)}")
 
 
-buscador = BuscarPalabras("Modulo_5/ejercicios/notas.txt")
+ejercicio_4 = BuscarPalabras("Modulo_5/ejercicios/archivos/notas.txt")
 
 print("Método con split")
-buscador.buscar_split("el")
+ejercicio_4.buscar_split("el")
 
 print("\nMétodo con regex")
-buscador.buscar_regex("el")
+ejercicio_4.buscar_regex("el")

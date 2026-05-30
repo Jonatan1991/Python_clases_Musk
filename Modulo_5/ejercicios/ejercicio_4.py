@@ -4,7 +4,7 @@
 # palabra "el".
 
 def buscar_palabra():
-    with open("Modulo_5/ejercicios/notas.txt", "r", encoding="utf-8") as file:
+    with open("Modulo_5/ejercicios/archivos/notas.txt", "r", encoding="utf-8") as file:
         count = 0
         for linea in file:
             #Dicvide una cadena de texto en partes y devuelve varias lista de palabras divididas en lineas
@@ -28,7 +28,7 @@ import re
 
 def buscar_palabra_2():
     palabra = "el"
-    with open("Modulo_5/ejercicios/notas.txt", "r", encoding="utf-8") as file:
+    with open("Modulo_5/ejercicios/archivos/notas.txt", "r", encoding="utf-8") as file:
         texto = file.read()
         resultados = re.findall(palabra, texto, re.IGNORECASE)
         for resultado in resultados:

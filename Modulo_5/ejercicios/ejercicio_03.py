@@ -3,7 +3,7 @@
 # archivo de texto.
 
 def contar_palabras():
-    with open("Modulo_5/ejercicios/story.txt", "r") as file:
+    with open("Modulo_5/ejercicios/archivos/story.txt", "r") as file:
         content = file.read()
     words = content.split()
     return len(words)

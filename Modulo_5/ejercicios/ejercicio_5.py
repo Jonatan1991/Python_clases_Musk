@@ -6,7 +6,7 @@ import re
 
 #Como se haria normalmente
 def display_words():
-    with open("Modulo_5/ejercicios/story.txt", "r", encoding="utf-8") as file:
+    with open("Modulo_5/ejercicios/archivos/story.txt", "r", encoding="utf-8") as file:
         count = 0
         for linea in file:
             palabras = linea.split()
@@ -23,7 +23,7 @@ display_words()
 
 #COn file.read() me quito un bucle de arriba
 def display_words_2():
-    with open("Modulo_5/ejercicios/story.txt", "r", encoding="utf-8") as file:
+    with open("Modulo_5/ejercicios/archivos/story.txt", "r", encoding="utf-8") as file:
         texto = file.read()
         print(texto)
 
@@ -42,7 +42,7 @@ display_words_2()
 
 #respuesta hecha con expreciones regulares
 def display_words_3():
-    with open("Modulo_5/ejercicios/story.txt", "r", encoding="utf-8") as file:
+    with open("Modulo_5/ejercicios/archivos/story.txt", "r", encoding="utf-8") as file:
         texto = file.read()
 
     # \b\w{1,3}\b → palabras de 1 a 3 caracteres

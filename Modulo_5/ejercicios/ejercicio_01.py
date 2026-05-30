@@ -4,7 +4,7 @@
 
 
 def leer_poema():
-    with open("Modulo_5/ejercicios/poema.txt", "r", encoding="utf-8") as file:
+    with open("Modulo_5/ejercicios/archivos/poema.txt", "r", encoding="utf-8") as file:
         for line in file:
             print(line.strip())
             

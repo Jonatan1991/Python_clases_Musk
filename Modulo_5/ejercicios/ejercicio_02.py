@@ -10,7 +10,7 @@
 # El resultado debe ser 5.
 
 def contar_lineas():
-    with open("Modulo_5/ejercicios/story.txt", "r", encoding="utf-8") as file:
+    with open("Modulo_5/ejercicios/archivos/story.txt", "r", encoding="utf-8") as file:
         line_count = 0
         for line in file:
             line_count += 1
