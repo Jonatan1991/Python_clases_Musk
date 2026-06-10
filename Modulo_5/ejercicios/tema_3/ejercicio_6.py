@@ -1,20 +1,23 @@
-# Encuentra el coche con el precio más alto de
-# precio de cada empresa.
+# Divide la matriz en cuatro submatrices de igual
+# tamaño. Nota: Crea una matriz de enteros 8x3
+# de un rango entre 10 y 34 de tal manera que la
+# diferencia entre cada elemento sea 1 y luego
+# divide la matriz en cuatro submatrices de igual
+# tamaño
 
-import pandas as pd
+import numpy as np
 
-df = pd.read_csv("Modulo_5/ejercicios/archivos/Modulo5_Automobile_data-221102-123259.csv")
+# Crea una matriz de enteros 8x3 de un rango entre 10 y 34
+matrix = np.arange(10, 34).reshape(8, 3)
 
-coche_mas_caro_por_empresa = df.loc[df.groupby("company")["price"].idxmax()]
+# Divide la matriz en cuatro submatrices de igual tamaño
+submatrices = np.split(matrix, 4, axis=0)
 
-print(coche_mas_caro_por_empresa)
-
-
-# df.groupby('native-country')['capital-gain'].agg([len, min, max])
-print()
-coche_mas_caro = df.groupby("company")["price"].max()
-print(coche_mas_caro)
-
-print()
-coche_mas_caro = df.groupby("company")["price"].agg("max")
-print(coche_mas_caro)
+print("Submatriz 1:")
+print(submatrices[0])
+print("\nSubmatriz 2:")
+print(submatrices[1])
+print("\nSubmatriz 3:")
+print(submatrices[2])
+print("\nSubmatriz 4:")
+print(submatrices[3])

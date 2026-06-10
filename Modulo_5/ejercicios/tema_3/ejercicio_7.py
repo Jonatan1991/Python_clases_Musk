@@ -1,10 +1,27 @@
-# Encuentra el kilometraje medio de cada empresa
-# fabricante de automóviles.
+# Ordena el siguiente array de NumPy:
+# Caso 1: Ordenar el array por la segunda fila
+# Caso 2: Ordenar el array por la segunda columna
 
-import pandas as pd
 
-df = pd.read_csv("Modulo_5/ejercicios/archivos/Modulo5_Automobile_data-221102-123259.csv")
+import numpy as np
 
-#mean calcula la media
-kilometraje_medio_empresa = df.groupby("company")["average-mileage"].mean()
-print(kilometraje_medio_empresa)
+sampleArray = np.array([[34,43,73], 
+                        [82,22,12], 
+                        [53,94,66]])
+
+# argsort devuelve los índices ordenados
+# Ordenar por la segunda fila
+orden = np.argsort(sampleArray[1])
+# ya en orden tenemos las filas ordenadas
+resultado1 = sampleArray[:, orden]
+
+print("Array ordenado por la segunda fila:")
+print(resultado1)
+
+
+# Ordenar por la segunda columna 
+orden = np.argsort(sampleArray[:, 1])
+resultado2 = sampleArray[orden, :]
+
+print("Array ordenado por la segunda columna:")
+print(resultado2)

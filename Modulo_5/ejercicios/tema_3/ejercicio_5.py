@@ -1,12 +1,14 @@
-# Cuenta el total de coches por empresa.
+# Crea una matriz de resultados sumando las
+# siguientes dos matrices de NumPy. А
+# continuación, modifica la matriz de resultados
+# calculando el cuadrado de cada elemento.
 
-import pandas as pd
+import numpy as np
 
-df = pd.read_csv("Modulo_5/ejercicios/archivos/Modulo5_Automobile_data-221102-123259.csv")
+arrayone = np.array([[5, 6, 9], [21, 18, 27]])
+arrayTwo = np.array([[15 ,33, 24], [4,7, 1]])
 
-coches_por_empresa = df.groupby("company").size()
-print(coches_por_empresa)
+result = arrayone + arrayTwo
+result = np.square(result)
 
-print()
-coches_empresa = df['company'].value_counts()
-print(coches_empresa)
+print(result)

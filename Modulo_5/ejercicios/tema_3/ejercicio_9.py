@@ -1,18 +1,14 @@
-# Concatena dos dataframes utilizando las
-# siguientes condiciones:
-# MUSK
-# GermanCars = {'Company': ['Ford', 'Mercedes', 'BMV', 'Audi'], 'Price': [23845, 171995, 135925, 71400]}
-# japaneseCars = {'Company': ['Toyota', 'Honda', 'Nissan', 'Mitsubishi'], 'Price': [29995, 23600, 61500, 58
-# 900]}
+# Elimina la segunda columna de una matriz dada е
+# inserta la siguiente columna nueva en su lugar.
 
-import pandas as pd
+import numpy as np
+sampleArray = np.array([[34,43,73], 
+                        [82,22,12], 
+                        [53,94,66]])
 
-GermanCars = {'Company': ['Ford', 'Mercedes', 'BMV', 'Audi'], 'Price': [23845, 171995, 135925, 71400]}
-japaneseCars = {'Company': ['Toyota', 'Honda', 'Nissan', 'Mitsubishi'], 'Price': [29995, 23600, 61500, 58900]}
+newColumn = np.array([[10,10,10]])
 
-df_GermanCars = pd.DataFrame(GermanCars)
-df_japaneseCars = pd.DataFrame(japaneseCars)
+sampleArray = np.delete(sampleArray, 1, axis=1)
+sampleArray = np.insert(sampleArray, 1, newColumn, axis=1)  
 
-#ignoreindex hace que el indice sea corrido en vez de reiniciarce por cada dataframe qie se concatene
-df_concatenado = pd.concat([df_GermanCars, df_japaneseCars], ignore_index=True)
-print(df_concatenado)
+print(sampleArray)
