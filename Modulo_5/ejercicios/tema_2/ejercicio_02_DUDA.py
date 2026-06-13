@@ -7,8 +7,13 @@ import numpy as np
 
 df = pd.read_csv("Modulo_5/ejercicios/archivos/Modulo5_Automobile_data-221102-123259.csv")
 
-df = df.replace(["?", "n.a", "NaN"], "DESCONOCIDO")
+# Reemplazar valores inválidos por NaN real
+df = df.replace(["?", "n.a", "NaN"], "desconocido")
+df = df.fillna("desconocido")
 
-df.to_csv("Modulo_5/ejercicios/archivos/Modulo5_Automobile_data_arreglado.csv", index=False)
-
-print("Archivo limpiado y guardado correctamente.")
+if df.isna().sum().sum() == 0:
+    # Guardar el archivo limpio
+    df.to_csv("Modulo_5/ejercicios/archivos/Modulo5_Automobile_data_limpio.csv", index=False)
+    print("Archivo limpiado y actualizado correctamente.")
+else:
+    print("Aún hay valores nulos en el archivo.")
